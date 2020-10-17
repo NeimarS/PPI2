@@ -5,10 +5,10 @@ class ProdutoDAO {
 
     public static function getConexao(){ 
         if (!isset($pdo)) {
-            $servername = "127.0.0.1";//ou "localhost"
-            $username = "root";
-            $password = "";
-            $databasename = "db_loc";       
+            $servername = "ec2-52-203-165-126.compute-1.amazonaws.com";//ou "localhost"
+            $username = "avvnravlnmctsu";
+            $password = "dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e";
+            $databasename = "deasl9b7dlhusd";       
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
                 // set the PDO error mode to exception
