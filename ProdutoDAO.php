@@ -5,10 +5,19 @@ class ProdutoDAO {
 
     public static function getConexao(){ 
         if (!isset($pdo)) {
-            $servername = "ec2-52-203-165-126.compute-1.amazonaws.com";//ou "localhost"
-            $username = "avvnravlnmctsu";
-            $password = "dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e";
-            $databasename = "deasl9b7dlhusd";       
+            //$servername = "ec2-52-203-165-126.compute-1.amazonaws.com";//ou "localhost"
+            //$username = "avvnravlnmctsu";
+            //$password = "dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e";
+            //$databasename = "deasl9b7dlhusd";       
+            $db = (function(){
+                $parts = (parse_url(getenv('DATABASE_URL') ?: 'postgresql://username:password@localhost:5432/your_database_name_here'));
+                extract($parts);
+                $path = ltrim($path, "/");
+                $teste = new PDO("pgsql:host={$host};port={$port};dbname={$path}", $user, $pass);
+                var_dump($teste);
+                return $teste;
+            })();
+            
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
                 // set the PDO error mode to exception
