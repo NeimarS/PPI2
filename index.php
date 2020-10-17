@@ -11,7 +11,6 @@ include_once 'UsuarioController.php';
 
 $app = AppFactory::create();
 $app->addBodyParsingMiddleware();
-print("teste");
 
 $app->group('/cliente', function($app) {
     $app->post('/inserir','ClienteController:inserir');
