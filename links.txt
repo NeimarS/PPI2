@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/49431345/how-to-remotely-connect-to-heroku-postgresql-database-using
+https://www.google.com/search?hl=pt-BR&sxsrf=ALeKk03r4KX8GfT4H3Scl7BlNQ5RrkUGew%3A1602967199779&ei=n1aLX9qKL5245OUPtue3wAY&q=DATABASE_URL+heroku+php+pdo&oq=DATABASE_URL+heroku+php+pdo&gs_lcp=CgZwc3ktYWIQAzoCCAA6BAgAEB46BggAEBYQHjoICAAQFhAKEB46BAgAEA06CAgAEAgQDRAeOgcIIRAKEKABOggIIRAWEB0QHjoECCEQFVD24B5Yp7MfYMy1H2gCcAF4AIABlAGIAeYRkgEEMC4xOJgBAKABAqABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwia1p2UvrzsAhUdHLkGHbbzDWgQ4dUDCA0&uact=5
+https://devcenter.heroku.com/articles/getting-started-with-php#provision-a-database
+https://packagist.org/packages/csanquer/pdo-service-provider
