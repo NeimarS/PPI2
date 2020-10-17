@@ -5,7 +5,7 @@ class ProdutoDAO {
 
     public static function getConexao(){ 
         if (!isset($pdo)) {
-            $servername = "https://traback.herokuapp.com/";//ou "localhost"
+            $servername = "ec2-52-203-165-126.compute-1.amazonaws.com";//ou "localhost"
             $username = "avvnravlnmctsu";
             $password = "dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e";
             $databasename = "deasl9b7dlhusd";       
