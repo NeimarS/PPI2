@@ -1,15 +1,44 @@
 <?php
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
 
-use Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider;
-use Silex\Application;
+require __DIR__ . '/vendor/autoload.php';
+include_once 'ClienteController.php';
+include_once 'DvdController.php';
+include_once 'PedidoController.php';
+include_once 'UsuarioController.php';
 
-$db_var = parse_url(getenv('DATABASE_URL'));
-//$db_con = pg_connect("host=$db_var["host"]");
-$db_con = pg_connect("host=ec2-52-203-165-126.compute-1.amazonaws.com port=5432 dbname=deasl9b7dlhusd user=avvnravlnmctsu password=dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e");
+$app = AppFactory::create();
+$app->addBodyParsingMiddleware();
 
+$app->group('/cliente', function($app) {
+    $app->post('/inserir','ClienteController:inserir');
+    $app->get('/buscar/{id}','ClienteController:buscar');
+    $app->get('/listar','ClienteController:listar');
+    $app->delete('/deletar/{id}','ClienteController:deletar');
+    $app->put('/alterar/{id}','ClienteController:alterar');
+})->add('UsuarioController:validarToken');
 
-//."port=".$db_var["port"]."dbname=" .ltrim($db_var["path"],'/'). "user=" .$db_var["user"]. "password=".$db_var["pass"]);
-$result = pg_query($db_con, "select * from cliente");
-var_dump(pg_fetch_all($result));
-    
+$app->group('/dvd', function($app) {
+    $app->post('/inserir','DvdController:inserir');
+    $app->get('/buscar/{id}','DvdController:buscar');
+    $app->get('/listarlocados','DvdController:listarlocados');
+    $app->get('/listarnaolocados','DvdController:listarnaolocados');
+    $app->get('/listartodos','DvdController:listartodos');
+    $app->delete('/deletar/{id}','DvdController:deletar');
+    $app->put('/alterar/{id}','DvdController:alterar');
+})->add('UsuarioController:validarToken');
+
+$app->group('/pedido', function($app) {
+    $app->post('/inserir','PedidoController:inserir');
+    $app->delete('/devolver/{cod_pedido}','PedidoController:devolver');
+    $app->get('/listartodos/{id}','PedidoController:listartodos');
+    $app->put('/alterar','PedidoController:alterar');
+})->add('UsuarioController:validarToken');
+
+$app->post('/login','UsuarioController:autenticar');
+
+$app->run();
+
 ?>
