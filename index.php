@@ -14,7 +14,7 @@
                )
                
     );
-    print_r($dbopts);
+    var_dump($dbopts);
     /*
     $app->get('/db/', function() use($app) {
         $st = $app['pdo']->prepare('SELECT nome FROM cliente');
