@@ -12,8 +12,10 @@
                    'dbname' => ltrim($dbopts["path"],'/')
                    )
                )
+               
     );
-
+    print_r($dbopts);
+    /*
     $app->get('/db/', function() use($app) {
         $st = $app['pdo']->prepare('SELECT nome FROM cliente');
         $st->execute();
@@ -26,6 +28,6 @@
         } 
         
       });
-
+*/
 
 ?>
