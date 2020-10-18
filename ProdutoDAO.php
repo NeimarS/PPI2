@@ -5,12 +5,12 @@ class ProdutoDAO {
 
     public static function getConexao(){ 
         if (!isset($pdo)) {
-            $servername = "ec2-52-203-165-126.compute-1.amazonaws.com";//ou "localhost"
-            $username = "avvnravlnmctsu";
-            $password = "dce192a8ecc0fdaa27ee81dcf9530655de4db2595792d4864031d026f51c847e";
-            $databasename = "deasl9b7dlhusd";    
-            $porta = "5432";   
-          
+            $db_var = parse_url(getenv('DATABASE_URL'));
+            $servername = $db_var["host"];
+            $username = $db_var["user"];
+            $password = $db_var["pass"];
+            $databasename = ltrim($db_var["path"],'/');    
+            $porta = $db_var["port"];   
             
             try{
                 $pdo = new PDO("pgsql:host=$servername;port=$porta;dbname=$databasename", $username, $password);
