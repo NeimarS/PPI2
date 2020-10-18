@@ -3,6 +3,7 @@
         "slim/slim": "^4.5",
         "slim/psr7": "^1.2",
         "firebase/php-jwt": "^5.2",
-        "csanquer/pdo-service-provider": "~1.1dev"
+        "csanquer/pdo-service-provider": "~1.1dev",
+        "phpunit/phpunit": "^8.5"
     }
 }
