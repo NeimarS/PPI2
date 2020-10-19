@@ -54,25 +54,28 @@
             return $response->withStatus(401);
         }
 
-        public function perfil($request, $response, $args) {
-            $data = $request->getParsedBody();  
-            $dao= new ClienteDAO;    
-            $usuario = $dao->buscaPorLogin($data['login']);
-            if ($usuario['login'] == 'admin' and $usuario['senha'] == $data['senha']){
-                $token = array(
-                    'login' => $usuario['login'],
-                    'cod_cli' => $usuario['cod_cli'],
-                    'nome' => $usuario['nome']
-                );
-                $jwt = JWT::encode($token, $this->secretKey);
-                validarToken();
-                return $response->withJson(["token" => $jwt], 201)
-                    ->withHeader('Content-type', 'application/json'); 
+        public function validarTokenAdmin($request, $handler)
+        {
+            $response = new Response();
+            $token = $request->getHeader('Admin');
+            
+            if($token && $token[0])
+            {
+                try {
+                    $decoded = JWT::decode($token[0], $this->secretKey, array('HS256'));
+
+                    if($decoded){
+                        $response = $handler->handle($request);
+                        return($response);
+                    }
+                } catch(Exception $error) {
+
+                    return $response->withStatus(401);
+                }
             }
-            else {
-                return $response->withStatus(401);
-            }
-        }    
+            
+            return $response->withStatus(401);
+        }
         
     }//fim da classe UsuarioController
 ?>
