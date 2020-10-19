@@ -18,7 +18,7 @@ $app->group('/cliente', function($app) {
     $app->get('/listar','ClienteController:listar');
     $app->delete('/deletar/{id}','ClienteController:deletar');
     $app->put('/alterar/{id}','ClienteController:alterar');
-})->add('UsuarioController:validarToken');
+})->add('UsuarioController:perfil');
 
 $app->group('/dvd', function($app) {
     $app->post('/inserir','DvdController:inserir');
@@ -28,7 +28,7 @@ $app->group('/dvd', function($app) {
     $app->get('/listartodos','DvdController:listartodos');
     $app->delete('/deletar/{id}','DvdController:deletar');
     $app->put('/alterar/{id}','DvdController:alterar');
-})->add('UsuarioController:validarToken');
+})->add('UsuarioController:perfil');
 
 $app->group('/pedido', function($app) {
     $app->post('/inserir','PedidoController:inserir');
