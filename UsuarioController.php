@@ -53,29 +53,6 @@
             
             return $response->withStatus(401);
         }
-
-        public function validarTokenAdmin($request, $handler)
-        {
-            $response = new Response();
-            $token = $request->getHeader('Admin');
-            
-            if($token && $token[0])
-            {
-                try {
-                    $decoded = JWT::decode($token[0], $this->secretKey, array('HS256'));
-
-                    if($decoded){
-                        $response = $handler->handle($request);
-                        return($response);
-                    }
-                } catch(Exception $error) {
-
-                    return $response->withStatus(401);
-                }
-            }
-            
-            return $response->withStatus(401);
-        }
         
     }//fim da classe UsuarioController
 ?>
