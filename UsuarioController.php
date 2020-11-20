@@ -29,7 +29,7 @@
                 return $response->withStatus(401);
             } 
             else {
-                debug_to_console($usuario);
+                //debug_to_console($usuario);
                 return $response->withStatus(201);
             }  
             /*
