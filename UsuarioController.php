@@ -16,15 +16,21 @@
             $data = $request->getParsedBody();  
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
-            if ($usuario['senha'] == $data['senha']){
-                $token = array(
-                    'login' => $usuario['login'],
-                    'cod_cli' => $usuario['cod_cli'],
-                    'nome' => $usuario['nome']
-                );
-                $jwt = JWT::encode($token, $this->secretKey);
-                return $response->withJson(["token" => $jwt], 201)
-                    ->withHeader('Content-type', 'application/json');   
+            if ($usuario != "") {
+
+                if ($usuario['senha'] == $data['senha']){
+                    $token = array(
+                        'login' => $usuario['login'],
+                        'cod_cli' => $usuario['cod_cli'],
+                        'nome' => $usuario['nome']
+                    );
+                    $jwt = JWT::encode($token, $this->secretKey);
+                    return $response->withJson(["token" => $jwt], 201)
+                        ->withHeader('Content-type', 'application/json');   
+                }
+                else {
+                    return $response->withStatus(401);
+                }
             }
             else {
                 return $response->withStatus(401);
