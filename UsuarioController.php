@@ -16,7 +16,7 @@
             $data = $request->getParsedBody();  
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
-            if(empty($usuario)) {
+            if($usuario == false) {
                 return $response->withStatus(401);
             } 
             else {
