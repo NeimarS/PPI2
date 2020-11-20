@@ -11,6 +11,15 @@
         private $secretKey = "t&st&";
         
 
+        public function debug_to_console($data) {
+            $output = $data;
+            if (is_array($output))
+                $output = implode(',', $output);
+        
+            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+        }
+
+
         public function autenticar($request, $response, $args)
         {   
             $data = $request->getParsedBody();  
@@ -20,9 +29,8 @@
                 return $response->withStatus(401);
             } 
             else {
-                $payload = json_encode($usuario);        
-                $response->getBody()->write($payload);
-                return $response->withHeader('Content-Type', 'application/json');
+                debug_to_console($usuario);
+                return $response->withStatus(201);
             }  
             /*
             if (!empty($usuario)) {
