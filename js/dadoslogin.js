@@ -14,7 +14,8 @@ function enviarLogin(login){
             console.log(JSON.parse(this.responseText));
             limparFormulario();
         } else {
-        	document.alert("Login ou senha inválidos!")
+        	alert("Login ou senha inválidos!");
+            limparFormulario();
         }
     };
     xhttp.open("POST", "https://traback.herokuapp.com/login", true);
