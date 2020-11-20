@@ -16,6 +16,10 @@
             $data = $request->getParsedBody();  
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
+            if(empty($usuario)) {
+                return $response->withStatus(401);
+            }   
+
             if (!empty($usuario)) {
 
                 if ($usuario['senha'] == $data['senha']){
