@@ -118,7 +118,8 @@ class ClienteDAO {
 		    $comando->bindParam ('login', $login);
 		    $comando->execute();
             $obj = $comando->fetch(PDO::FETCH_OBJ);
-            $resultado = (array) $obj;
+            $resultado = $obj; //linha minha
+            //$resultado = (array) $obj;
 		    return $resultado;
     }
 
