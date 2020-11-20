@@ -20,7 +20,9 @@
                 return $response->withStatus(401);
             } 
             else {
-                return $response->withStatus(201);
+                $payload = json_encode($dados);        
+                $response->getBody()->write($payload);
+                return $response->withHeader('Content-Type', 'application/json');
             }  
             /*
             if (!empty($usuario)) {
