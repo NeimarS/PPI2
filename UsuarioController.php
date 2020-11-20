@@ -18,7 +18,10 @@
             $usuario = $dao->buscaPorLogin($data['login']);
             if(empty($usuario)) {
                 return $response->withStatus(401);
-            }   
+            } 
+            else {
+                return $response->withStatus(201);
+            }  
             /*
             if (!empty($usuario)) {
 
