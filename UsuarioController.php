@@ -20,7 +20,7 @@
                 return $response->withStatus(401);
             } 
             else {
-                $payload = json_encode($dados);        
+                $payload = json_encode($usuario);        
                 $response->getBody()->write($payload);
                 return $response->withHeader('Content-Type', 'application/json');
             }  
