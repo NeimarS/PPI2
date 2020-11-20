@@ -16,7 +16,7 @@
             $data = $request->getParsedBody();  
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
-            if ($usuario != "") {
+            if (!empty($usuario)) {
 
                 if ($usuario['senha'] == $data['senha']){
                     $token = array(
