@@ -26,15 +26,8 @@
             $data = $request->getParsedBody();  
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
-            if($usuario == false) {
-                return $response->withStatus(401);
-            } 
-            else {
-                //debug_to_console($usuario);
-                return $response->withStatus(201);
-            }  
-            /*
-            if (!empty($usuario)) {
+            
+            if ($usuario ==false) {
 
                 if ($usuario['senha'] == $data['senha']){
                     $token = array(
@@ -53,7 +46,7 @@
             else {
                 return $response->withStatus(401);
             }
-            */
+            
         }
 
         public function validarToken($request, $handler)
