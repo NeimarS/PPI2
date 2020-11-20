@@ -19,7 +19,7 @@
             if(empty($usuario)) {
                 return $response->withStatus(401);
             }   
-
+            /*
             if (!empty($usuario)) {
 
                 if ($usuario['senha'] == $data['senha']){
@@ -39,6 +39,7 @@
             else {
                 return $response->withStatus(401);
             }
+            */
         }
 
         public function validarToken($request, $handler)
