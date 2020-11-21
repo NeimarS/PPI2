@@ -1,16 +1,12 @@
 //Função para incluir outro javascript nesse
-function include_once(file_path) {
-    var sc = document.getElementsByTagName("script");
-    for (var x in sc) {
-      if (sc[x].src != null) {
-        if (sc[x].src.indexOf(file_path) != -1) {
-            return;
-      }
-      include(file_path);
-    }
+function include(file_path) {
+    var j = document.createElement("script");   
+    j.type = "text/javascript";
+    j.src = file_path;
+    document.body.appendChild(j);
   }
 
-include_once("cliente.js");
+include("cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
