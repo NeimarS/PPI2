@@ -117,7 +117,8 @@ class ClienteDAO {
 		    $comando = $pdo->prepare($query);
 		    $comando->bindParam ('login', $login);
 		    $comando->execute();
-            $obj = $comando->fetch(PDO::FETCH_OBJ);
+            //$obj = $comando->fetch(PDO::FETCH_OBJ);
+            $obj = $comando->fetch(PDO::FETCH_ASSOC); //linha minha
             $resultado = $obj; //linha minha
             //$resultado = (array) $obj;
 		    return $resultado;

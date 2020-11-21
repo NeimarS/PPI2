@@ -27,7 +27,7 @@
             $dao= new ClienteDAO;    
             $usuario = $dao->buscaPorLogin($data['login']);
             
-            if ($usuario != false) {
+            if (empty($usuario) == false) {
 
                 if ($usuario['senha'] == $data['senha']){
                     $token = array(
