@@ -18,6 +18,10 @@ function enviarLogin(login){
         } else {
             cont += 1;
         }
+        if (cont == 3) {
+            alert("Login ou senha inválidos!");
+            limparFormulario();
+        }
         alert(cont);    
     };
     
@@ -26,10 +30,7 @@ function enviarLogin(login){
     xhttp.send(JSON.stringify(login));   
     
     
-    if (cont == 9) {
-        alert("Login ou senha inválidos!");
-        limparFormulario();
-    }
+    
 }
 
 function limparFormulario(){
