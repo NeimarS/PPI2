@@ -16,7 +16,7 @@ function enviarLogin(login){
             console.log(JSON.parse(this.responseText));
             limparFormulario();
 
-        } elseif (this.readyState === 4 && this.status === 401 ) {
+        } else if (this.readyState === 4 && this.status === 401 ) {
             alert("Login ou senha inválidos!");
             limparFormulario();
         }
