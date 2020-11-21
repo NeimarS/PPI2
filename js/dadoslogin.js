@@ -1,4 +1,4 @@
-/*
+
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
     event.preventDefault();
@@ -7,7 +7,6 @@ form.onsubmit = function(event){
     login.senha = document.querySelector("#senha").value;
     enviarLogin(login);
 }
-*/
 
 function enviarLogin(login){
     var xhttp = new XMLHttpRequest();
