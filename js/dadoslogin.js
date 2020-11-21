@@ -1,3 +1,4 @@
+include("cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
@@ -15,8 +16,9 @@ function enviarLogin(login){
         if (this.readyState === 4 && this.status === 201) {
             console.log(JSON.parse(this.responseText));
             limparFormulario();
-
-        } else if (this.readyState === 4 && this.status === 401 ) {
+        } 
+        
+        if (this.readyState === 4 && this.status === 401 ) {
             alert("Login ou senha inválidos!");
             limparFormulario();
         }
