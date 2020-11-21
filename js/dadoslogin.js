@@ -18,9 +18,9 @@ function enviarLogin(login){
         } else {
             cont += 1;
         }
-        
+        alert(cont);    
     };
-    alert(cont);
+    
     xhttp.open("POST", "https://traback.herokuapp.com/login", true);
     xhttp.setRequestHeader("Content-Type","application/json");
     xhttp.send(JSON.stringify(login));   
