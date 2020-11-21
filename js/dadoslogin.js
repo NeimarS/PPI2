@@ -18,7 +18,7 @@ function enviarLogin(login){
         } else {
             cont = cont + 1;
         }
-        if (cont == 3) {
+        if (cont == 3 && this.readyState === 4 && this.status === 401 ) {
             alert("Login ou senha inválidos!");
             limparFormulario();
         }
