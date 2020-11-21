@@ -60,8 +60,8 @@ function enviarLogin(login){
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
             setCookie("token", JSON.parse(this.responseText), "1" );
-            //console.log(getCookie("token"));
-            console.log("teset");
+            console.log(getCookie("token"));
+            console.log("teset2");
             checkCookie();
             limparFormulario();
         }; 
