@@ -20,13 +20,15 @@ function enviarLogin(login){
         }
         
     };
+    
+    xhttp.open("POST", "https://traback.herokuapp.com/login", true);
+    xhttp.setRequestHeader("Content-Type","application/json");
+    xhttp.send(JSON.stringify(login));   
+    
     if (cont == 3) {
         alert("Login ou senha inválidos!");
         limparFormulario();
     }
-    xhttp.open("POST", "https://traback.herokuapp.com/login", true);
-    xhttp.setRequestHeader("Content-Type","application/json");
-    xhttp.send(JSON.stringify(login));   
 }
 
 function limparFormulario(){
