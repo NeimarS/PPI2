@@ -34,13 +34,13 @@ function setCookie(cname, cvalue, exdays) {
 
   //Checar se o cookie foi setado
   function checkCookie() {
-    var username = getCookie("username");
+    var username = getCookie("token");
     if (username != "") {
-     alert("Welcome again " + username);
+     alert("Welcome again " + token);
     } else {
       username = prompt("Please enter your name:", "");
       if (username != "" && username != null) {
-        setCookie("username", username, 365);
+        //setCookie("username", username, 365);
       }
     }
   }
