@@ -4,7 +4,7 @@ function include(file_path) {
     j.type = "text/javascript";
     j.src = file_path;
     document.body.appendChild(j);
-  }
+  };
 
 include("cliente.js");
 
