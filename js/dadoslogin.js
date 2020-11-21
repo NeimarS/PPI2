@@ -1,7 +1,12 @@
 //Função para incluir outro javascript nesse
-<script type="text/javascript">
-  document.write(unescape("%3Cscript src='js/cliente.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
+function include(file_path) {
+    var j = document.createElement("script");   
+    j.type = "text/javascript";
+    j.src = file_path;
+    document.body.appendChild(j);
+  };
+
+include("/js/cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
