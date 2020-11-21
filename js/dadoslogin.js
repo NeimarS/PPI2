@@ -22,7 +22,7 @@ function enviarLogin(login){
             alert("Login ou senha inválidos!");
             limparFormulario();
         }
-        alert(cont);    
+           
     };
     
     xhttp.open("POST", "https://traback.herokuapp.com/login", true);
