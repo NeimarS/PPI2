@@ -31,6 +31,19 @@ function setCookie(cname, cvalue, exdays) {
     }
     return "";
   }
+
+  //Checar se o cookie foi setado
+  function checkCookie() {
+    var username = getCookie("username");
+    if (username != "") {
+     alert("Welcome again " + username);
+    } else {
+      username = prompt("Please enter your name:", "");
+      if (username != "" && username != null) {
+        setCookie("username", username, 365);
+      }
+    }
+  }
   
 
 var form = document.querySelector("#formulario");
@@ -49,6 +62,7 @@ function enviarLogin(login){
         if (this.readyState === 4 && this.status === 201) {
             setCookie("token", JSON.parse(this.responseText), "expires=Thu, 01 Jan 1970 00:00:00 UTC;" );
             console.log(getCookie("token"));
+            checkCookie();
             limparFormulario();
         }; 
 
