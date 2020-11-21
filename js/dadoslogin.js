@@ -61,7 +61,7 @@ function enviarLogin(login){
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
             setCookie("token", JSON.parse(this.responseText), "expires=Thu, 01 Jan 1970 00:00:00 UTC;" );
-            console.log(getCookie("token"));
+            //console.log(getCookie("token"));
             checkCookie();
             limparFormulario();
         }; 
