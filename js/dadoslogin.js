@@ -16,7 +16,7 @@ function enviarLogin(login){
             console.log(JSON.parse(this.responseText));
             limparFormulario();
         } else {
-            cont += 1;
+            cont = cont + 1;
         }
         if (cont == 3) {
             alert("Login ou senha inválidos!");
