@@ -57,7 +57,6 @@ form.onsubmit = function(event){
 
 function enviarLogin(login){
     var xhttp = new XMLHttpRequest();
-    var cont = 0;
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
             setCookie("token", JSON.parse(this.responseText), "expires=Thu, 01 Jan 2021 00:00:00 UTC;" );
