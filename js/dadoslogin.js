@@ -25,7 +25,7 @@ function enviarLogin(login){
     xhttp.setRequestHeader("Content-Type","application/json");
     xhttp.send(JSON.stringify(login));   
     
-    if (cont == 3) {
+    if (cont == 9) {
         alert("Login ou senha inválidos!");
         limparFormulario();
     }
