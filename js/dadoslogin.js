@@ -1,4 +1,4 @@
-include("cliente.js");
+include_once("cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
@@ -35,3 +35,15 @@ function limparFormulario(){
     document.querySelector("#login").value="";
     document.querySelector("#senha").value="";
 }
+
+//Função para incluir outro javascript nesse
+function include_once(file_path) {
+    var sc = document.getElementsByTagName("script");
+    for (var x in sc) {
+      if (sc[x].src != null) {
+        sc[x].src.indexOf(file_path) != -1) return;
+      }
+      include(file_path);
+    }
+  }
+  
