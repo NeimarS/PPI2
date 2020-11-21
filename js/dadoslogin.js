@@ -6,7 +6,7 @@ function include(file_path) {
     document.body.appendChild(j);
   };
 
-include("cliente.js");
+include("js/cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
