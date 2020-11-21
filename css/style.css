@@ -26,8 +26,6 @@ a {
     transition: background 500ms ease;
 }
 
-
-
 .btn:hover {
     cursor: pointer;
     background: #000;

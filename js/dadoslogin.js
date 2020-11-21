@@ -10,12 +10,16 @@ form.onsubmit = function(event){
 
 function enviarLogin(login){
     var xhttp = new XMLHttpRequest();
+    var cont = 0;
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 201) {
             console.log(JSON.parse(this.responseText));
             limparFormulario();
         } else {
-        	alert("Login ou senha inválidos!");
+            cont += 1;
+        }
+        if (cont == 3) {
+            alert("Login ou senha inválidos!");
             limparFormulario();
         }
     };
