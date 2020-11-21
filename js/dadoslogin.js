@@ -2,11 +2,11 @@
 function include(file_path) {
     var j = document.createElement("script");   
     j.type = "text/javascript";
-    j.src = file_path;
+    j.src = "js/" + file_path;
     document.body.appendChild(j);
   };
 
-include("/js/cliente.js");
+include("cliente.js");
 
 var form = document.querySelector("#formulario");
 form.onsubmit = function(event){
