@@ -5,7 +5,7 @@ function include(file_path) {
     j.src = "js/" + file_path;
     document.body.appendChild(j);
   };
-
+//incluir clientes
 include("clientes.js");
 
 var form = document.querySelector("#formulario");
