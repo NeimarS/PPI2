@@ -1,6 +1,6 @@
 class ClienteService {
     constructor(){
-        this.uri = "https://traback.herokuapp.com/cliente";
+        this.uri = "http://localhost:8080/cliente";
     }
 
     listar_clientes(ok, error) {

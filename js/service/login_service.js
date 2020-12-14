@@ -1,6 +1,6 @@
 class LoginService {
     constructor(){
-        this.uri = "https://traback.herokuapp.com/login";
+        this.uri = "http://localhost:8080/login";
     }
     //listar_clientes
     logar(ok, error, login) {
