@@ -8,7 +8,7 @@ function listar_clientes() {
             montarTabela(JSON.parse(this.responseText));
         }
     };
-    xhttp.open("GET", "https://traback.herokuapp.com/cliente/listar", true);
+    xhttp.open("GET", "http://localhost:8080/cliente/listar", true);
     xhttp.send();
 }
 

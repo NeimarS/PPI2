@@ -1,0 +1,30 @@
+
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    height: 50px;
+  }
+ 
+  
+  table {
+    align-content: center;
+  }
+
+  table tr > th,
+table tr > td
+{
+  padding: 10px;
+  border: #bbb 1px solid;
+}
+
+tr > td:first-child
+{
+  white-space: nowrap;
+}

@@ -15,6 +15,103 @@ a {
     color: inherit;
 }
 
+
+.campos2 {
+    display: inline-block;
+    padding: 5px 50px 10px 10px;
+    font-size: 1.1rem;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+}
+
+.campos3 {
+    
+    
+    display: inline-block;
+    
+    /*padding: 20px 270px 10px 10px;*/
+    width: 270px;
+    height: 40px;
+    font-size: 1.1rem;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+    
+    
+    /*overflow:hidden;
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-select.gif) no-repeat #111;
+    background-position: 205px center;
+    width: 270px;
+    height:18px;
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:18px;
+    padding:13px 20px 13px 12px;
+    
+    color:#fff; 
+    text-indent: 9.09px;
+    */
+    /*text-overflow: "";*/
+}
+
+.btn4 {
+    position: absolute;
+    top: 77%;
+    left: 41%;
+    display: inline-block;
+    padding: 15px 24px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+}
+.btn5 {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    display: inline-block;
+    padding: 15px 24px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 15px 24px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+}
+
+.btn3 {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    background: #111;
+    color: #eee;
+    border-radius: 5px;
+    transition: background 500ms ease;
+}
+
+.texto2 {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+
 .btn {
     display: inline-block;
     padding: 15px 60px;
@@ -89,6 +186,27 @@ a {
     padding: 10px;
 }
 
+#showcase2 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    background: url('/img/showcase.jpg') no-repeat center center/cover;
+
+    
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: color;
+}
+
+
+.holder2 {
+    display: inline-block;
+    justify-content: center;
+}
+
+
+
 /* Showcase */
 #showcase {
     height: 100vh;
@@ -103,6 +221,32 @@ a {
     background-blend-mode: color;
 }
 
+
+.holder {
+    display: flex;
+    justify-content: center;
+}
+.imagem {
+  width: 200px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+.imagem::after {
+  content: attr(data-title); /* estilo que coloco a legenda no lugar */
+  position: absolute;
+  width: 100%;
+  bottom: -40px;
+  left: 0;
+}
+
+/*
+#showcase-container-cliente {
+    text-align: center;
+    width: 150px;
+    display: inline-block;
+}
+*/
 
 #showcase-container {
     text-align: center;

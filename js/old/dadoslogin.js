@@ -73,7 +73,7 @@ function enviarLogin(login){
            
     };
     
-    xhttp.open("POST", "https://traback.herokuapp.com/login", true);
+    xhttp.open("POST", "http://localhost:8080/login", true);
     xhttp.setRequestHeader("Content-Type","application/json");
     xhttp.send(JSON.stringify(login));   
     

@@ -60,7 +60,7 @@ class ClienteDAO {
     function listar_cliente(){
         try{
             $pdo = ProdutoDAO::getConexao();
-            $stmt = $pdo->prepare("SELECT cod_cli, nome, endereco, telefone, cpf FROM cliente");
+            $stmt = $pdo->prepare("SELECT cod_cli, nome, endereco, telefone, cpf, login, senha FROM cliente");
             $stmt->execute();
             //Para construtores com parâmetros, deve-se passar valores iniciais para 
             //o fetch iniciar.
@@ -87,7 +87,7 @@ class ClienteDAO {
 
     function buscarPorId($cod_cli){
         $pdo = ProdutoDAO::getConexao();
-        $q = "SELECT cod_cli, nome, endereco, telefone, cpf FROM cliente WHERE cod_cli=:cod_cli";
+        $q = "SELECT cod_cli, nome, endereco, telefone, cpf, login, senha FROM cliente WHERE cod_cli=:cod_cli";
         $comando = $pdo->prepare($q);
         $comando->bindParam(":cod_cli", $cod_cli);
         $comando->execute();

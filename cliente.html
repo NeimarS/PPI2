@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <link rel="stylesheet" href="css/cliente.css">
     <title>Locatech System</title>
 </head>
 
@@ -22,36 +23,54 @@
             </ul>
         </div>
     </nav>
-    <!--header - div-->
+
     <header id="showcase">
-        <main id="showcase-container">    
-            <!---
-            <form id="formulario">
-                <label for="login" class="texto">Login:</label>
-                <input type="text" id="login" class="campos" autofocus="true"><br/>
-                <label for="senha" class="texto">Senha:</label>
-                <input type="password" id="senha" class="campos"><br/><br/>
-                <input type="submit" id="btacessar" value="Acessar" class="btn">
-            </form>
-            -->
+        <main id="showcase-container-cliente">
+            <div class="holder">
+                <!---
+                <div class="imagem" data-title="Inserir Cliente">
+                    <a href="#"><img height="100" width="100" src="img/inserir.png" alt="Inserir Cliente" /></a>
+                </div>
+                -->
+                <!---
+                <div class="imagem" data-title="Alterar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/alterar.png" alt="Alterar Cliente" /></a>
+                </div>
+                -->
+                <!--
+                <div class="imagem" data-title="Buscar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/buscar_id.png" alt="Buscar Cliente pelo ID" /></a>
+                </div>
+                -->
+                <!---
+                <div class="imagem" data-title="Deletar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/deletar.png" alt="Deletar Cliente" /></a>
+                </div>
+                -->
+                <div id="listar_cliente" class="imagem" data-title="Gerenciar Clientes">
+                    <a href="#" ><img height="100" width="100" src="img/listar.png" alt="Gerenciar Clientes" /></a>
+                </div>
+              
+              </div>
+            
         </main>
     </header>
 
-    <!-- About -->
     <!--
     <section id="clients">
         <div class="headline" id="lst_clientes">Lista de clientes</div>
         <div id="clients-container">
-    
+        	
             <img src="/img/netflix.png" class="client" alt="">
             <img src="/img/google.png" class="client" alt="">
             <img src="/img/apple.png" class="client" alt="">
             <img src="/img/microsoft.png" class="client" alt="">
-    
+        	
         </div>
     </section>
     -->
-    <!---
+    
+    <!--
     <section id="features">
         <div class="headline">O que fazemos</div>
         <div id="features-container">
@@ -105,7 +124,6 @@
         </div>
     </section>
     -->
-    
     <!--
     <div id="testimonials">
         <div class="headline">O que acham de nós</div>
@@ -149,14 +167,21 @@
     <!-- jQuery CDN 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    -->
+	-->
     <!-- Our JS file 
-    <script src="js/main.js"></script> -->
-    <script src="js/entidade/ClasseLogin.js"></script>
-    <script src="js/service/login_service.js"></script>
-    <script src="js/view/form_login.js"></script>
-    <script src="js/controller/login_controller.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script> 
+    <script src="js/clientes.js"></script>
+    <script src="js/ClasseLogin.js"></script>
+    -->
+    <!-- <script src="js/dadoslogin.js"></script> -->
 </body>
+
+<script src="js/entidade/ClasseCliente.js"></script>
+<script src="js/service/cliente_service.js"></script>
+<script src="js/view/form_cliente.js"></script>
+<script src="js/view/tabela_cliente.js"></script>
+<script src="js/controller/cliente_controller.js"></script>
+<script src="js/app_cliente.js"></script>
+
 
 </html>

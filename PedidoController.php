@@ -41,7 +41,8 @@ class PedidoController {
             $payload = json_encode($data);
             $response->getBody()->write($payload);
             return $response
-                      ->withHeader('Content-Type', 'application/json');
+                      ->withHeader('Content-Type', 'application/json')
+                      ->withStatus(201);
         }
     } //fim da função inserir
 
@@ -58,13 +59,22 @@ class PedidoController {
     }//fim da função devolver
 
     public function listartodos(Request $request, Response $response, $args) {      
-        $id = $args['id'];
         $dao = new PedidoDAO();        
-        $data = $dao->listar_todos_pedidos($id);
+        $data = $dao->listar_todos();
         $payload = json_encode($data);
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
     }//fim da função listartodos
+
+    public function buscar(Request $request, Response $response, $args) {
+        $data = $request->getParsedBody();
+        $cod_pedido = $args['cod_pedido'];
+        $dao = new PedidoDao();
+        $dados = $dao->buscarPedidoPorId($cod_pedido);
+        $payload = json_encode($dados);        
+        $response->getBody()->write($payload);
+        return $response->withHeader('Content-Type', 'application/json');
+    } //fim da função buscar
 
     public function alterar(Request $request, Response $response, $args): Response {  
         $data = $request->getParsedBody();

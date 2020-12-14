@@ -32,8 +32,9 @@ $app->group('/dvd', function($app) {
 
 $app->group('/pedido', function($app) {
     $app->post('/inserir','PedidoController:inserir');
+    $app->get('/buscar/{cod_pedido}','PedidoController:buscar');
     $app->delete('/devolver/{cod_pedido}','PedidoController:devolver');
-    $app->get('/listartodos/{id}','PedidoController:listartodos');
+    $app->get('/listartodos','PedidoController:listartodos');
     $app->put('/alterar','PedidoController:alterar');
 })->add('UsuarioController:validarToken');
 

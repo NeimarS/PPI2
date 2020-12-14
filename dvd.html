@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <link rel="stylesheet" href="css/cliente.css">
+    <title>Locatech System</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navbar-container">
+            <h1 class="logo">Locatech System</h1>
+            <ul id="navbar-items">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cliente.html">Cliente</a></li>
+                <li><a href="dvd.html">DVD</a></li>
+                <li><a href="pedido.html">Pedido</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="showcase">
+        <main id="showcase-container-cliente">
+            <div class="holder">
+                <!---
+                <div class="imagem" data-title="Inserir Cliente">
+                    <a href="#"><img height="100" width="100" src="img/inserir.png" alt="Inserir Cliente" /></a>
+                </div>
+                -->
+                <!---
+                <div class="imagem" data-title="Alterar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/alterar.png" alt="Alterar Cliente" /></a>
+                </div>
+                -->
+                <!--
+                <div class="imagem" data-title="Buscar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/buscar_id.png" alt="Buscar Cliente pelo ID" /></a>
+                </div>
+                -->
+                <!---
+                <div class="imagem" data-title="Deletar Cliente">
+                    <a href="#"><img height="100" width="100" src="img/deletar.png" alt="Deletar Cliente" /></a>
+                </div>
+                -->
+                <div id="listar_dvd" class="imagem" data-title="Gerenciar Dvd">
+                    <a href="#" ><img height="100" width="100" src="img/listar.png" alt="Gerenciar Dvd" /></a>
+                </div>
+              
+              </div>
+            
+        </main>
+    </header>
+
+    <footer id="footer">
+        <p>Copyright 2020 - Todos os direitos reservados.</p>
+        <p>Locatech System.</p>
+    </footer>
+
+</body>
+
+<script src="js/entidade/ClasseDvd.js"></script>
+<script src="js/service/dvd_service.js"></script>
+<script src="js/view/form_dvd.js"></script>
+<script src="js/view/tabela_dvd.js"></script>
+<script src="js/controller/dvd_controller.js"></script>
+<script src="js/app_dvd.js"></script>
+
+
+</html>

@@ -166,6 +166,22 @@ class PedidoDAO {
         }
     }
 
+    function listar_todos(){
+        try{
+            $pdo = ProdutoDAO::getConexao();
+            $stmt = $pdo->prepare("select nome, cod_pedido, pedido.cod_cli, dvd1, dvd2, dvd3, dvd4, dvd5, valortotal, vencimento, situacao from cliente, pedido WHERE
+            pedido.cod_cli = cliente.cod_cli");
+            $stmt->execute();
+            $todosPedidos = $stmt->fetchAll(
+                PDO::FETCH_ASSOC|PDO::FETCH_PROPS_LATE);
+            return $todosPedidos;
+        }
+        catch(PDOException $e)
+        {
+            echo "Statement failed: " . $e->getMessage();
+        }
+    }
+
     function verificar_vencimento($cod_pedido) {
         try{
             $pdo = ProdutoDAO::getConexao();
@@ -197,6 +213,17 @@ class PedidoDAO {
         $comando->bindValue(":valortotal",$pedidoatualizado->getValortotal());
         $comando->bindValue(":situacao",$pedidoatualizado->getSituacao());
         $comando->execute();       
+    }
+
+    function buscarPedidoPorId($cod_pedido){
+        $pdo = ProdutoDAO::getConexao();
+        $q = "SELECT * FROM pedido WHERE cod_pedido=:cod_pedido";
+        $comando = $pdo->prepare($q);
+        $comando->bindParam(":cod_pedido", $cod_pedido);
+        $comando->execute();
+        $comando->setFetchMode(PDO::FETCH_ASSOC|PDO::FETCH_PROPS_LATE);
+        $obj = $comando->fetch();
+        return($obj);
     }
 
 }//fim da classe DvdDAO
