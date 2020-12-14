@@ -1,6 +1,6 @@
 class DvdService {
     constructor(){
-        this.uri = "http://localhost:8080/dvd";
+        this.uri = "https://traback.herokuapp.com/dvd";
     }
 
     listar_dvd(ok, error) {

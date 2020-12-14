@@ -1,6 +1,6 @@
 class PedidoService {
     constructor(){
-        this.uri = "http://localhost:8080/pedido";
+        this.uri = "https://traback.herokuapp.com/pedido";
     }
     
     inserirPedido(pedido, ok, error){
